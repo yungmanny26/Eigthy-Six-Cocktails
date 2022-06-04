@@ -1,0 +1,33 @@
+<div class="pro-page" >
+
+
+{{#if userInSession}}
+    <h3 id="welcome">Welcome, {{ userInSession.username }}</h3>
+
+ {{!-- <img class="rounded-circle" src='{{userInSession.profilePicture}}' alt='Profile picture'
+            data-holder-rendered="true" width="250" height="250" /> --}}
+
+
+
+<br>
+   
+
+<div class="btn-group-pro">
+  <a href="/all-cocktails" class="btn btn-warning" aria-current="page">cocktails update</a> <br>
+  <a href="/cocktails-create" class="btn btn-warning">Creat cocktails</a>
+  <a href="/cocktails-details" class="btn btn-warning">your cocktails-list!</a>
+</div>
+
+
+
+{{else}}
+ <h3> No logged in user! </h3>
+   
+{{/if}}
+
+{{#if errorMessage}}
+    <p><b> {{ errorMessage }} </b></p>
+{{/if}}
+
+
+</div> 

@@ -1,0 +1,31 @@
+<h2> Update the cocktails details </h2>
+
+<form action="/cocktails-edits/{{drinksThatWillBeEdited._id}}" method="POST">
+    <label>
+        Title: <input type="text" name="title" value="{{drinksThatWillBeEdited.title}}"/>
+    <label>
+
+    <br>
+
+    <label>
+        glass: <input type="text" name="glass"  value="{{drinksThatWillBeEdited.glass}}"/>
+    <label>
+
+    <br>
+
+    <label>
+           measure:<input type="text" name="measure"  value="{{drinksThatWillBeEdited.measure}}" />
+       
+    <label>
+
+    <br>
+
+    <label>
+        instructions:<textarea name="instructions" cols="30" rows="4"  > {{drinksThatWillBeEdited.instructions}}</textarea>
+        
+    <label>
+
+    <br>
+
+    <button type='submit'> Save </button>
+</form>
