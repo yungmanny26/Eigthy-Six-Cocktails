@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/86drinks";
 
 mongoose
-  .connect(MONGO_URI)
+.connect(process.env.MONGODB_URI)
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -17,3 +17,6 @@ mongoose
   .catch((err) => {
     console.error("Error connecting to mongo: ", err);
   });
+
+
+  

@@ -17,7 +17,7 @@ module.exports = (app) => { // app is a placeholder
         maxAge: 600000000 // 60 * 1000 ms === 1 min
       },
       store: MongoStore.create({
-        mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost/86drinks'
+        mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost/EIGTHY-SIX-COCKTAILS'
  
         
         // ttl: 60 * 60 * 24 // 60sec * 60min * 24h => 1 day

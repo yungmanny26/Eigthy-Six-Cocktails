@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 
+
 const cocktailsSchema = new Schema(
   {
     // title: {type: String, unique: true},
