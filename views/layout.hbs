@@ -17,7 +17,7 @@
 
  <nav id="layout" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class='navbar-brand' href='/'>{{appTitle}}<span> </span></a>
+        <a class='navbar-brand' href='/cocktails-list'>{{appTitle}}<span> </span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,11 +26,13 @@
 
          {{#if userInSession}}
            <a class="navbar-brand"  href="/profile" > Profile </a> <br>
+          <a class="navbar-brand"  href="/logout" > logout </a> <br>
 
-            <form action="/logout" method="POST"> <br>
+            {{!-- <form class="navbar-brand"action="/logout" method="POST"> <br>
             
-              <button  class=" navbar-dark bg-dark navbar-brand"> logout </button> 
-            </form>  
+              <button  class=" navbar-dark bg-dark  navbar-brand"> logout </button> 
+
+            </form>   --}}
                
 
          {{else}}

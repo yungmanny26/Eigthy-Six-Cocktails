@@ -2,7 +2,7 @@ const router = require("express").Router();
 const bcryptjs = require("bcryptjs");
 const mongoose = require("mongoose");
 //const axios = require ("axios");
-
+const alcohol = require("../models/alcohol.model");
 const User = require("../models/User.model");
 
 const { isLoggedIn, isLoggedOut } = require("../config/route-guard.config");
@@ -133,7 +133,7 @@ router.post("/process-login", (req, res, next) => {
 // POST route to logout the user
 // <form action="/logout" method="POST">
 
-router.post("/logout", (req, res, next) => {
+router.get("/logout", (req, res, next) => {
   req.session.destroy((err) => {
     console.log(`Err while logout: ${err}`);
 
@@ -145,8 +145,15 @@ router.post("/logout", (req, res, next) => {
 // ****************************************************************************
 // GET route to display user's profile page
 //                      ✅ add ✅
-router.get("/profile", isLoggedIn, (req, res, next) => {
-  res.render("user-pages/profile-page");
+router.get("/profile", isLoggedIn, (req, res, next) => {  
+    alcohol.find({creator:req.session.currentUser._id}) 
+.then(cocktailfromDB=>{
+   
+res.render("user-pages/profile-page.hbs", {cocktailfromDB})
+})
+
+.catch(err => console.log(`Error while getting the drinks from the DB: ${err}`))
+
 });
 
 // POST route to change the profile image

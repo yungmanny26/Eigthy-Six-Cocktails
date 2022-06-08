@@ -48,16 +48,21 @@ router.post("/cocktails-list",  (req, res, next) => {
     const { title, category, glass, ingredient, measure} = req.body
 console.log(req.body)
     alcohol.create({ title, category, glass, ingredient, measure, creator:req.session.currentUser._id})
-    .then(cocktailfromDB => {
-        res.render("user-pages/profile-page", { cocktailfromDB})
-
+    
+    .then(() => {
+        alcohol.find( )
+        .then(cocktailfromDB =>{
+            res.render("user-pages/profile-page", { cocktailfromDB})
+        })
+       
+        .catch(err => console.log(`Error while deleting the book from the DB: ${err}`))
+    })
 })
-})
 
 
-router.get("/cocktails-delete", (req, res, next) => {
-    alcohol.find() 
-    .then( cocktailfromDB => {
+router.get("/cocktails-details/cocktails-delete", (req, res, next) => {
+     alcohol.find({creator:req.session.currentUser._id})
+     .then( cocktailfromDB => {
         res.render("cocktails/cocktails-details", {cocktailfromDB})
         .catch(err => console.log(`Error while deleting the book from the DB: ${err}`))
 })
@@ -67,8 +72,13 @@ router.post("/cocktails-delete/:_id", (req, res, next) => {
     alcohol.findByIdAndDelete(req.params._id)
     
         //   console.log(cocktailfromDB))
+        
         .then(() => {
-        res.render("user-pages/profile-page") 
+            alcohol.find() 
+            .then(cocktailfromDB =>{
+                res.render("user-pages/profile-page" ,{cocktailfromDB}) 
+            })
+       
     })
     .catch(err => console.log(`Error while deleting the book from the DB: ${err}`))
         

@@ -21,6 +21,64 @@
 
 </div>
 
+<div class="pro-page" >
+
+
+{{#if userInSession}}
+    <h3 id="welcome">Welcome, {{ userInSession.username }}</h3>
+
+ {{!-- <img class="rounded-circle" src='{{userInSession.profilePicture}}' alt='Profile picture'
+            data-holder-rendered="true" width="250" height="250" /> --}}
+
+
+
+<br>
+   
+
+<div class="btn-group-pro">
+  <a href="/all-cocktails" class="btn btn-warning  btn-lg btn-block" aria-current="page">Cocktails Update</a> <br>
+  <a href="/cocktails-create" class="btn btn-warning  btn-lg btn-block" >Creat Cocktails</a>
+
+</div>
+
+
+<ul class="list-group list-group-flush">
+
+    {{#each cocktailfromDB}}
+    
+
+    <h2 class="list-group-item">{{title}}</h2>
+    <li class="list-group-item">{{category}}</li>
+    <li class="list-group-item">{{glass}}</li>
+    <li class="list-group-item">{{measure}}</li>
+    <li class="list-group-item">{{ingredient}}</li>
+    <li class="list-group-item">{{instructions}}</li>
+    <br>
+
+    <br>
+    <form action="/cocktails-delete/{{_id}}" method="POST">
+       <button type='submit' class="btn btn-outline-danger">Remove</button>
+    </form>
+    
+
+    {{/each}}
+
+     
+</ul>
+</div>
+
+{{else}}
+ <h3> No logged in user! </h3>
+   
+{{/if}}
+
+{{#if errorMessage}}
+    <p><b> {{ errorMessage }} </b></p>
+{{/if}}
+
+
+</div> 
+
 
 
 {{else}}
