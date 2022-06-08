@@ -19,7 +19,7 @@ a {
 }
  
 .card{
-  background-color: black;
+  background-color: whitesmoke;
 }
 
 .pro-page{
@@ -48,15 +48,7 @@ a {
   padding: auto;
 }
 
-#profile {
-  color: rgb(185, 14, 14);
-}
 
-
-#yourList{
-  background-color: black (156, 26, 26);
-  color: rgb(15, 15, 15);
-}
 .list-group-item{
   color: rgb(38, 27, 136);
 }
@@ -87,7 +79,7 @@ a {
  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 
-
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
  *{
   margin: 0;
   padding: 0;
@@ -187,9 +179,7 @@ a {
 }
 
 
-.container-edit { margin-top: 50px;/* GRADIENT BG */ background: -moz-linear-gradient(45deg, rgba(0,145,0,1) 0%, rgba(0,86,199,1) 100%); /* ff3.6+ */ background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(0,145,0,1)), color-stop(100%, rgba(0,86,199,1))); /* safari4+,chrome */ background: -webkit-linear-gradient(45deg, rgba(0,145,0,1) 0%, rgba(0,86,199,1) 100%); /* safari5.1+,chrome10+ */ background: -o-linear-gradient(45deg, rgba(0,145,0,1) 0%, rgba(0,86,199,1) 100%); /* opera 11.10+ */ background: -ms-linear-gradient(45deg, rgba(0,145,0,1) 0%, rgba(0,86,199,1) 100%); /* ie10+ */ background: linear-gradient(45deg, rgba(0,145,0,1) 0%, rgba(0,86,199,1) 100%); /* w3c */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0056C7', endColorstr='#009100',GradientType=1 ); /* ie6-9 */}
-
-
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
 
 
  
@@ -198,9 +188,21 @@ a {
  Multicoloured Hover Variations
 */
 
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
 
+}
 #container-footer{
-  margin-top: 100px;
+  padding-bottom: 2.5rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+
+  
 }
 #social-fb:hover {
   color: #3B5998;

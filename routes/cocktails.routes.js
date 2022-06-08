@@ -113,7 +113,7 @@ router.get("/cocktails-details", (req, res, next) => {
     alcohol.find({creator:req.session.currentUser._id}) 
     .then(cocktailfromDB=>{
         // console.log(cocktailfromDB)
-        res.render("cocktails/cocktails-details.hbs", {cocktailfromDB})
+        res.render("cocktails/cocktails-details", {cocktailfromDB})
     })
     
     .catch(err => console.log(`Error while getting the drinks from the DB: ${err}`))
@@ -125,7 +125,7 @@ router.get("/cocktails-details", (req, res, next) => {
         alcohol.find({creator:req.session.currentUser._id}) 
         .then(cocktailfromDB=>{
             console.log(cocktailfromDB)
-        res.render("cocktails/all-cocktails.hbs", {cocktailfromDB})
+        res.render("cocktails/all-cocktails", {cocktailfromDB})
         })
         
         .catch(err => console.log(`Error while getting the drinks from the DB: ${err}`))
