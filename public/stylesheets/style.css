@@ -17,22 +17,21 @@ a {
 #logout{
   background-color: black;
 }
- 
+/*  
 .card{
   background-color: black;
+} */
+
+
+.list-group-horizontal{
+  margin: 0px;
+  flex-direction: row-reverse
 }
-
-.pro-page{
-  margin-left: auto;
-  margin-right: auto;
-  width: 16em
-
-} 
-
 #random{
   margin-top: 50px;
   color: rgb(146, 142, 138);
   justify-content: center
+   
   
 }
 #welcome{

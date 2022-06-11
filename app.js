@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 // default value for title local
 const capitalized = require("./utils/capitalized");
-const projectName = "86drinks";
+const projectName = "86cocktails";
 
 app.locals.appTitle = `${capitalized(projectName)} `;
 

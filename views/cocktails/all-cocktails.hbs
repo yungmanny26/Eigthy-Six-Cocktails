@@ -1,22 +1,26 @@
 <h1> Cocktails </h1>
+<div class="bg-image" 
+     style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+            height: 100vh">
 
-{{#each cocktailfromDB}}
-<div class="container-edit">
-  <ul class="list-group-edit">
-    <li class="list-group-item-2 clearfix">
-      <img class="img-responsive img-rounded" src="http://placehold.it/256/163a63" alt=""/>
-      <h3 class="list-group-item-heading">
-        {{title}}
-        <span class="label label-danger pull-right"></span>
-      </h3>
+<div class="container">
+<div class="row justify-content-space">
      
-        <button  class="btn btn-dark"> <a href="/cocktails-edits/{{_id}}/edit"> details-list!</a></button>
-        <br />
-       
-      </p>
-    
-</li>
-  </ul>
+{{#each cocktailfromDB}}
+
+<div class="col">
+      <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+           <div class="card-header"> {{title}}</div>
+        <div class="card-body">
+          <h5 class="card-title"> <button  class="btn btn-dark"> <a href="/cocktails-edits/{{_id}}/edit"> Edit!</a></button></h5>
+          <p class="card-text"></p>
+        </div>
+       </div>
 </div>
 
-    {{/each}}
+
+ {{/each}}
+
+  </div>
+ </div>
+</div>

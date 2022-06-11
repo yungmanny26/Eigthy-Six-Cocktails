@@ -12,36 +12,42 @@
 <br>
    
 
-<div class="btn-group-pro">
+<div class="btn-group-pro list-group list-group-horizontal">
   <a href="/all-cocktails" class="btn btn-warning  btn-lg btn-block" aria-current="page">Cocktails Update</a> <br>
   <a href="/cocktails-create" class="btn btn-warning  btn-lg btn-block" >Creat Cocktails</a>
 
 </div>
 
-
-<ul class="list-group list-group-flush">
+<div class="container">
+   <div class="row justify-content-around">
+   
 
     {{#each cocktailfromDB}}
-    
+     <div class="'col">
+     
 
-    <h2 class="list-group-item">{{title}}</h2>
-    <li class="list-group-item">{{category}}</li>
-    <li class="list-group-item">{{glass}}</li>
-    <li class="list-group-item">{{measure}}</li>
-    <li class="list-group-item">{{ingredient}}</li>
-    <li class="list-group-item">{{instructions}}</li>
+    <h2 class="list-group-item">Title:  {{title}}</h2>
+    <li class="list-group-item">Category: {{category}}</li>
+    <li class="list-group-item">Glass:  {{glass}}</li>
+    <li class="list-group-item">Measure: {{measure}}</li>
+    <li class="list-group-item">Ingredient: {{ingredient}}</li>
+    <li class="list-group-item">Instructions: {{instructions}}</li>
     <br>
 
     <br>
     <form action="/cocktails-delete/{{_id}}" method="POST">
        <button type='submit' class="btn btn-outline-danger">Remove</button>
     </form>
+     </div>
+
     
 
     {{/each}}
 
      
 </ul>
+</div>
+</div>
 </div>
 
 {{else}}

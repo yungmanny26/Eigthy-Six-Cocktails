@@ -8,29 +8,30 @@
   <button class="btn btn-outline-success" type="submit">Search</button>
 </form>
      
-             
+             <div class="container">
+               <div class="row justify-content-between">
     {{#each randomdrinks }}
     
-    <div  class="mx-auto" style="width: 200px;">
-      <div class="row align-items-start"> 
-
-          <form action="/cocktails-list" method="POST"> <br>
-            <div class="card">
+    <div class="'col">
+     <div class="card" style="width:250px" >
+          <form action="/cocktails-list" method="POST"> 
+            
           <img src="{{strDrinkThumb}}" class="card-img-top" alt="..." data-holder-rendered="true" width="250" height="250" />
             <div class="card-body">
     <h5 class="card-title"> Cocktail: {{ strDrink }}</h5>
     <p class="card-text"> Catagory: {{strCategory}} <br> 
-              Glass: {{strGlass}} <br> 
-              Ingredient: {{strIngredient1}} {{strIngredient2}} {{strIngredient3}} <br> 
-              Measure: {{strMeasure1}} ,{{strMeasure2}} {{strMeasure3}} <br>.</p>
+                          Glass: {{strGlass}} <br> 
+                          Ingredient: {{strIngredient1}} {{strIngredient2}} {{strIngredient3}} <br> 
+                          Measure: {{strMeasure1}} ,{{strMeasure2}} {{strMeasure3}} <br>.</p>
                <button  type="submit" class="btn btn-primary"> add </button>
               </div>
-             </div>
+             
+            
 
 
 
         </h4> 
-           </div>
+           
           <input type="hidden" name="title" value="{{ strDrink }}" >
          <input type="hidden"  name="category" value="{{strCategory}}">
           <input type="hidden" name="glass" value="{{strGlass}}">
@@ -42,11 +43,12 @@
 
             
             </form>
-
-            
+     </div>
+         </div>   
     {{/each}}
+    </div>
 
-
+             </div>
 </div> 
 
 

@@ -4,33 +4,47 @@
 <h2> Creat A Original Cocktail 🥂 </h2>
 
 <form action="/cocktails-create" method="POST">
-    <label>
-        Title: <input type="text" name="title" />
-    <label>
 
-    <br>
+ <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" name="title" id="form6Example1" class="form-control" placeholder="Title" />
+        <label class="form-label" for="form6Example1"> </label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text"name="glass" id="form6Example2" class="form-control " placeholder="Glass"/>
+        <label class="form-label" for="form6Example2"></label>
+      </div>
+    </div>
+  </div>
 
-    <label>
-        glass <input type="text" name="glass" />
-    <label>
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+    <input type="text"name="measure" id="form6Example3" class="form-control"placeholder="Measure" />
+    <label class="form-label" for="form6Example3"> </label>
+  </div>
 
-    <br>
+  
+  <!-- Message input -->
+  <div class="form-outline mb-4">
+    <textarea class="form-control" name="instructions" id="form6Example7" rows="4" placeholder="Instructions"></textarea>
+    <label class="form-label" for="form6Example7"></label>
+  </div>
 
-    <label>
-           measure :<input type="text" name="measure" />
-       
-    <label>
-
-    <br>
-
-    <label>
-        instructions:  <textarea name="instructions" cols="30" rows="4"> </textarea>
-        
-    <label>
-
-    <br>
-
-    <button> Save </button>
+  
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4">Save</button>
+   
 </form>
 
 </div>
+
+
+
+
+
+
+
+  

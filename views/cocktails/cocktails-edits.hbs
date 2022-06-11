@@ -1,31 +1,47 @@
 <h2> Update The Cocktails </h2>
 
 <form action="/cocktails-edits/{{drinksThatWillBeEdited._id}}" method="POST">
-    <label>
-        Title: <input type="text" name="title" value="{{drinksThatWillBeEdited.title}}"/>
-    <label>
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" name="title" id="form6Example1" class="form-control" placeholder="Title" value="{{drinksThatWillBeEdited.title}}"/>
+        <label class="form-label" for="form6Example1"> </label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text"name="glass" id="form6Example2" class="form-control " placeholder="Glass"  value="{{drinksThatWillBeEdited.glass}}"/>
+        <label class="form-label" for="form6Example2"></label>
+      </div>
+    </div>
+  </div>
 
-    <br>
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+    <input type="text"name="measure" id="form6Example3" class="form-control"placeholder="Measure"  value="{{drinksThatWillBeEdited.measure}}"/>
+    <label class="form-label" for="form6Example3"> </label>
+  </div>
 
-    <label>
-        glass: <input type="text" name="glass"  value="{{drinksThatWillBeEdited.glass}}"/>
-    <label>
+  
+  <!-- Message input -->
+  <div class="form-outline mb-4">
+    <textarea class="form-control" name="instructions" id="form6Example7" rows="4" placeholder="Instructions" >{{drinksThatWillBeEdited.instructions}}</textarea>
+    <label class="form-label" for="form6Example7"></label>
+  </div>
 
-    <br>
+  
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4">Update</button>
 
-    <label>
-           measure:<input type="text" name="measure"  value="{{drinksThatWillBeEdited.measure}}" />
-       
-    <label>
 
-    <br>
 
-    <label>
-        instructions:<textarea name="instructions" cols="30" rows="4"  > {{drinksThatWillBeEdited.instructions}}</textarea>
-        
-    <label>
 
-    <br>
+   
 
-    <button type='submit'> Save </button>
-</form>
+
+
+
+
+
+
+
