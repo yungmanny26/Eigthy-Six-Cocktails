@@ -103,9 +103,9 @@ router.get("/cocktails-create",(req, res, next)=>{
 router.post("/cocktails-create", (req, res, next) =>{
 
 
-    const { title, glass, measure, instructions } = req.body;
+    const { title, glass, measure, ingredients } = req.body;
     
-    alcohol.create({title, measure ,instructions ,glass, creator:req.session.currentUser._id})
+    alcohol.create({title, measure ,ingredients ,glass, creator:req.session.currentUser._id})
     .then(cocktailsfromDB => {
      
         res.render("cocktails/cocktails-new",{cocktailsfromDB});
@@ -170,18 +170,11 @@ alcohol.findByIdAndUpdate(req.params.drinksThatWillBeEdited,{title, glass, liquo
     })  
     .catch(err => console.log(`Error while getting the drinks from the DB: ${err}`))   
     
-// res.render("cocktails/cocktails-details",{cocktailfromDB})
-// console.log( )
+
 })
 
 .catch(err => console.log(`Error while getting the drinks from the DB: ${err}`))   
-// alcohol.find({creator:req.session.currentUser._id}) 
 
-// .then(cocktailfromDB =>{
-    
-//     res.render("user-pages/profile-page",{cocktailfromDB})
-//     })  
-//     .catch(err => console.log(`Error while getting the drinks from the DB: ${err}`))   
 })
 
 
