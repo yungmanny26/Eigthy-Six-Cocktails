@@ -103,9 +103,9 @@ router.get("/cocktails-create",(req, res, next)=>{
 router.post("/cocktails-create", (req, res, next) =>{
 
 
-    const { title, glass, measure, ingredients } = req.body;
+    const { title, glass, measure, ingredient } = req.body;
     
-    alcohol.create({title, measure ,ingredients ,glass, creator:req.session.currentUser._id})
+    alcohol.create({title, measure ,ingredient ,glass, creator:req.session.currentUser._id})
     .then(cocktailsfromDB => {
      
         res.render("cocktails/cocktails-new",{cocktailsfromDB});
@@ -157,8 +157,8 @@ router.get("/cocktails-edits/:cocktailid/edit", (req, res, next) => {
 
 router.post("/cocktails-edits/:drinksThatWillBeEdited", (req, res, next) => {
 
-    const { title, glass, liquor,measure, instructions } = req.body
-alcohol.findByIdAndUpdate(req.params.drinksThatWillBeEdited,{title, glass, liquor,measure, instructions}, {new: true})
+    const { title, glass, measure, ingredient } = req.body
+alcohol.findByIdAndUpdate(req.params.drinksThatWillBeEdited,{title, glass, measure, ingredient}, {new: true})
 
 
 .then(cocktailfromDB =>{
